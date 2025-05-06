@@ -316,7 +316,8 @@ bool GazeboSimSystem::initSim(
                   << mimicked_joint << "' with multiplier: "
                   << mimic_joint.multiplier);
       this->dataPtr->mimic_joints_.push_back(mimic_joint);
-      suffix = "_mimic";
+      // Fix based on the issue: https://github.com/ros-controls/gazebo_ros2_control/issues/173
+      // suffix = "_mimic";
     }
 
     RCLCPP_INFO_STREAM(this->nh_->get_logger(), "\tState:");
